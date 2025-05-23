@@ -6,121 +6,316 @@
   <title>Sadguru Coaching Classes</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    :root {
+      --primary-blue: #3a86ff;
+      --primary-purple: #8338ec;
+      --text-dark: #102a43;
+      --text-light: #334e68;
+      --bg-light: #f5f9fc;
+      --accent-yellow: #ffeb3b;
+      --accent-yellow-dark: #f57f17;
+      --shadow-light: rgba(0,0,0,0.07);
+      --shadow-strong: rgba(0,0,0,0.12);
+      --footer-bg: #1b262c;
+      --footer-text: #bbe1fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #f5f9fc;
-      color: #102a43;
+      background: var(--bg-light);
+      color: var(--text-dark);
       line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
+
     header {
-      background: linear-gradient(135deg, #3a86ff, #8338ec);
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
       color: white;
-      padding: 40px 20px;
+      padding: 3rem 1rem 4rem;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
+
     header img {
       max-width: 120px;
-      margin-bottom: 10px;
+      margin-bottom: 0.8rem;
+      filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
     }
+
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.2rem;
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin: 0 0 0.3rem;
       letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
+
     header p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2vw, 1.2rem);
       font-weight: 600;
-      margin-top: 0;
+      margin: 0;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      width: 100%;
+      background-color: var(--accent-yellow);
+      border-top: 2px solid var(--accent-yellow-dark);
+      border-bottom: 2px solid var(--accent-yellow-dark);
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: 700;
+      color: #000;
+      padding: 12px 0;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      user-select: none;
+      position: relative;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .announcement-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 22s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Banner Section */
+    section.banner-section {
+      text-align: center;
+      margin: 3rem auto 4rem;
+      max-width: 540px;
+      padding: 0 1rem;
+    }
+
+    section.banner-section h2 {
+      color: var(--primary-purple);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 2px rgba(131, 56, 236, 0.3);
+    }
+
+    .banner-container {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px var(--shadow-light);
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .banner-container:hover {
+      box-shadow: 0 10px 30px var(--shadow-strong);
+    }
+
+    .banner-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      max-height: 240px;
+      border-radius: 14px;
+    }
+
+    /* Main Content */
     main {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
     }
+
     .offer-section, .fees-section {
       background: white;
       padding: 30px 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgb(0 0 0 / 0.07);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px var(--shadow-light);
       margin-bottom: 40px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .offer-section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
+
+    .offer-section:hover, .fees-section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px var(--shadow-strong);
     }
+
     .offer-section h2,
     .fees-section h2 {
-      color: #3a86ff;
-      margin-bottom: 15px;
+      color: var(--primary-blue);
+      margin-bottom: 18px;
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: clamp(1.6rem, 3vw, 1.9rem);
+      letter-spacing: 0.5px;
     }
+
     .offer-section ul {
       list-style-type: disc;
-      padding-left: 20px;
+      padding-left: 1.4rem;
       font-size: 1.1rem;
-      color: #334e68;
+      color: var(--text-light);
     }
+
     .offer-section ul li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
+
     .fees-section {
       background: #e0e7ff;
     }
+
     .fees-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      margin-top: 18px;
+      font-size: 1.05rem;
+      table-layout: fixed; /* keeps columns equal width */
+      word-wrap: break-word;
     }
+
     .fees-table th, .fees-table td {
-      padding: 12px 15px;
+      padding: 14px 18px;
       border: 1px solid #b0b7ff;
       text-align: left;
-      font-size: 1.05rem;
       color: #243665;
+      transition: background-color 0.3s ease;
     }
+
     .fees-table th {
       background-color: #acb8ff;
-      color: #102a43;
+      color: var(--text-dark);
     }
+
+    .fees-table tbody tr:hover {
+      background-color: #c3d1ff;
+    }
+
     .fees-note {
-      margin-top: 15px;
+      margin-top: 18px;
       font-size: 0.95rem;
       color: #374785;
       font-style: italic;
       text-align: center;
     }
+
+    /* Call to Action */
     .cta {
       text-align: center;
-      margin: 60px 0 40px 0;
+      margin: 60px 0 40px;
     }
+
+    .cta a {
+      text-decoration: none;
+    }
+
     .cta button {
-      background: #8338ec;
+      background: var(--primary-purple);
       color: white;
-      padding: 15px 35px;
-      font-size: 1.2rem;
+      padding: 16px 42px;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 12px rgb(131 56 236 / 0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 18px rgba(131, 56, 236, 0.45);
+      font-weight: 700;
+      letter-spacing: 0.7px;
     }
-    .cta button:hover {
-      background: #3a86ff;
-      box-shadow: 0 6px 18px rgb(58 134 255 / 0.7);
+
+    .cta button:hover,
+    .cta button:focus {
+      background: var(--primary-blue);
+      box-shadow: 0 8px 24px rgba(58, 134, 255, 0.75);
+      outline: none;
     }
+
+    /* Contact Section */
+    #contact-section {
+      margin-top: 3rem;
+      padding: 0 1rem;
+    }
+    #contact-section h2 {
+      text-align: center;
+      color: var(--primary-purple);
+      font-size: clamp(1.7rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    #contact-section p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+    #contact-section a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    #contact-section a:hover {
+      color: var(--primary-purple);
+      text-decoration: underline;
+    }
+
+    /* YouTube Section */
+    .youtube-section {
+      max-width: 900px;
+      margin: 4rem auto 0;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .youtube-section h2 {
+      color: var(--primary-purple);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 2px rgba(131, 56, 236, 0.3);
+    }
+    .youtube-section iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      border: none;
+    }
+    .youtube-section p {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+    .youtube-section p a {
+      color: var(--primary-purple);
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 6px;
+      transition: color 0.3s ease;
+    }
+    .youtube-section p a:hover {
+      color: var(--primary-blue);
+      text-decoration: underline;
+    }
+
+    /* Footer */
     footer {
-      background: #1b262c;
-      color: #bbe1fa;
+      background: var(--footer-bg);
+      color: var(--footer-text);
       text-align: center;
       padding: 20px 15px;
       font-size: 0.9rem;
+      user-select: none;
     }
     footer a {
-      color: #bbe1fa;
+      color: var(--footer-text);
       text-decoration: none;
       margin: 0 8px;
       font-weight: 600;
@@ -128,65 +323,116 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Responsive */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
       }
       .offer-section h2,
-      .fees-section h2 {
+      .fees-section h2,
+      #contact-section h2,
+      .youtube-section h2 {
         font-size: 1.5rem;
       }
       .cta button {
         width: 100%;
-        font-size: 1rem;
-        padding: 14px 20px;
+        font-size: 1.1rem;
+        padding: 14px 0;
+      }
+      .banner-container img {
+        max-height: 180px;
+      }
+      .youtube-section iframe {
+        height: 240px;
       }
     }
   </style>
+
+  <script>
+    window.addEventListener('load', () => {
+      // Simple welcome popup with emoji
+      alert(
+`📢 प्रिय विद्यार्थी व पालकांनो,
+
+Sadguru Coaching Classes तर्फे एक महत्त्वाची घोषणा :
+10वी च्या घवघवीत यशानंतर
+आणि
+फ्री क्लास बॅचच्या उस्फूर्त प्रतिसादानंतर,
+आम्ही आता आमच्या नियमित बॅचेस सुरू करत आहोत!
+
+✅ 2025 मध्ये आमच्या 80% पेक्षा जास्त विद्यार्थ्यांनी पहिल्या श्रेणीत यश मिळवलं!
+आणि पालकांचे सकारात्मक अभिप्राय हेच आमचं बळ आहेत!
+
+अ‍ॅडमिशन सुरू आहेत – आजपासून 
+
+3री ते 12वी SSC व CBSE साठी!
+(वर्ग 11वी–12वी Science + JEE/MHT-CET साठी विशेष मार्गदर्शन उपलब्ध)
+
+नवीन Regular बॅचेस: 
+🗓️ सुरूवात – 19 मे 2025 पासून.
+
+फक्त पहिल्या 50 विद्यार्थ्यांसाठी ✨ खास ऑफर 
+
+⏳ सीट्स जलद भरत आहेत – आजच नाव नोंदवा! 
+
+✅ प्रवेश सुरू: आजपासूनच! 
+📅 बॅच सुरू: 19 मे 2025
+📞 अधिक माहितीसाठी: 9890787526
+
+📚 – Sadguru Coaching Classes`
+      );
+    });
+  </script>
 </head>
 <body>
+  
   <header>
     <img src="Master.png" alt="Sadguru Coaching Classes Logo" />
     <h1>Sadguru Coaching Classes</h1>
-    <p>Your Pathway to Academic Excellence</p>
+    <p>Your Pathway to Academic Excellence 🎓</p>
   </header>
+
+  <div class="announcement-bar">
+    <div class="announcement-content" aria-label="Announcements">
+      📢 New Batch starts from 1st June &nbsp;|&nbsp;
+      🧪 Class 10 Batches have started &nbsp;|&nbsp;
+      👨‍🏫 Limited Seats Only &nbsp;|&nbsp;
+      📞 Call Now at 9890787526
+    </div>
+  </div>
+
+  <section class="banner-section" aria-label="Our Result Banner">
+    <h2>🎉 Our Result Is Our Pride 🎉</h2>
+    <div class="banner-container">
+      <img src="Result.jpg" alt="Sadguru Coaching Classes Results Banner" />
+    </div>
+  </section>
+
   <main>
-    <section class="offer-section">
-      <h2>11th & 12th Science</h2>
+    <section class="offer-section" aria-labelledby="offers-title">
+      <h2 id="offers-title">🌟 Why Choose Sadguru Coaching Classes?</h2>
       <ul>
-        <li>PCMB - Physics, Chemistry, Mathematics, Biology</li>
-        <li>JEE / NEET Foundation & Preparation</li>
-        <li>MHT-CET Coaching for State Level Exams</li>
+        <li>👨‍🏫 Experienced & Dedicated Faculty</li>
+        <li>🧑‍🎓 Personal Attention with Small Batches</li>
+        <li>📝 Comprehensive Study Material & Tests</li>
+        <li>💡 Focus on Conceptual Understanding & Practice</li>
+        <li>📈 Proven Track Record of Excellent Results</li>
       </ul>
     </section>
-    <section class="offer-section">
-      <h2>3rd to 10th Standard</h2>
-      <ul>
-        <li>Strong Foundation Courses for Core Subjects</li>
-        <li>Interactive and Engaging Classes</li>
-        <li>Personalized Attention to Students</li>
-      </ul>
-    </section>
-    <section class="offer-section">
-      <h2>SSC & CBSE Board</h2>
-      <ul>
-        <li>All Subjects Covered for Both Boards</li>
-        <li>Comprehensive Syllabus Coverage</li>
-        <li>Preparation for Board Exams With Practice Tests</li>
-      </ul>
-    </section>
-    <section class="fees-section">
-      <h2>Fee Structure (Yearly Fees)</h2>
-      <table class="fees-table">
+
+    <section class="fees-section" aria-labelledby="fees-title">
+      <h2 id="fees-title">💰 Fees Structure</h2>
+      <table class="fees-table" role="table" aria-describedby="fees-note">
         <thead>
           <tr>
-            <th>Class</th>
-            <th>Board</th>
-            <th>Yearly Fees (₹)</th>
+            <th scope="col">Class</th>
+            <th scope="col">Board</th>
+            <th scope="col">Fees (₹)</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>3 to 5</td><td>CBSE / SSC</td><td>4,999</td></tr>
+            <tr><td>3 to 5</td><td>CBSE / SSC</td><td>4,999</td></tr>
           <tr><td>6</td><td>CBSE / SSC</td><td>7,999</td></tr>
           <tr><td>7</td><td>State / CBSE</td><td>11,999</td></tr>
           <tr><td>8</td><td>State / CBSE</td><td>15,999</td></tr>
@@ -198,46 +444,53 @@
           <tr><td>12</td><td>Science</td><td>40,000</td></tr>
         </tbody>
       </table>
-      <p class="fees-note">* These are yearly fees. Fees may vary for monthly and quarterly installments.</p>
+      <p id="fees-note" class="fees-note">Fees are monthly and include all study materials and tests.</p>
     </section>
-    
+
     <div class="cta">
-      <a href="tel:9890787526">
-        <button>
-          Call Now
-        </button>
+      <a href="tel:9890787526" aria-label="Call Sadguru Coaching Classes now">
+        <button type="button">📞 Call Now: 9890787526</button>
       </a>
-    </div>
-
-    <section id="contact-section">
-      <h2 style="text-align:center; color:#8338ec;">Contact & Enrollment</h2>
-      <p style="text-align:center; font-size:1.1rem;">
-        For admissions and inquiries, call us at <strong>+91 98907 87526</strong> or <strong>+91 98811 57526</strong><br />
-        Email: <a href="mailto:info@sadgurucoaching.com" style="color:#3a86ff;">info@sadgurucoaching.com</a>
-      </p>
-    </section>
-
-    <div style="text-align:center; margin-top: 40px;">
-      <div style="text-align:center; margin-top: 40px;">
-        <h2 style="color:#8338ec;">Our Latest YouTube Videos</h2>
-        <iframe width="100%" height="400" 
-          src="https://www.youtube.com/embed/videoseries?list=PLFUNiSf151kNHunpaJLzvhAVcsnrXG1kB"
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <p>
-        Or visit us on 
-        <a href="https://www.instagram.com/sadgurucoachingclass/" target="_blank" style="color:#8338ec;">Instagram</a> and 
-        <a href="https://www.youtube.com/@sadgurucoachingclass" target="_blank" style="color:#3a86ff;">YouTube</a>.
-      </p>
     </div>
   </main>
 
+  <section id="contact-section" aria-label="Contact Information">
+    <h2>Contact Us</h2>
+    <p>
+      Visit us or get in touch: <br />
+      <strong>Sadguru Coaching Classes</strong><br />
+      Ingale Complex - Mahalunge 410501<br />
+      Phone: <a href="tel:9890787526">9890787526</a><br />
+      Email: <a href="mailto:sadgurucoaching@example.com">sadgurucoachingclass@mail.com</a>
+    </p>
+  </section>
+
+  <section class="youtube-section" aria-label="Sadguru Coaching Classes YouTube Channel">
+    <h2>Our YouTube Playlist</h2>
+    <iframe
+  width="800"
+  height="450"
+  src="https://www.youtube.com/embed?listType=playlist&list=PLFUNiSf151kNHunpaJLzvhAVcsnrXG1kB"
+  title="Sadguru Coaching Classes Playlist"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  loading="lazy"
+></iframe>
+
+    <p id="youtube-description">
+      Follow Our Instagram Account For Latest Updates. 
+      <a href="https://www.instagram.com/sadgurucoachingclass/" target="_blank" rel="noopener noreferrer">Follow Now</a>
+    </p>
+    <p id="youtube-description">
+      Stay updated with our latest tutorials, exam tips & motivational videos. 
+      <a href="https://www.youtube.com/@sadgurucoachingclass" target="_blank" rel="noopener noreferrer">Subscribe Now</a>
+    </p>
+  </section>
+
   <footer>
-    &copy;Sadguru Coaching Classes. All rights reserved.
+    &copy; 2025 Sadguru Coaching Classes | Designed by Chaitanya Ghadage
   </footer>
+
 </body>
 </html>
