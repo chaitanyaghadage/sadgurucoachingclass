@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadguru Coaching Classes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f9fc;
+      color: #102a43;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #3a86ff, #8338ec);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    header img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 0;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .offer-section, .fees-section {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgb(0 0 0 / 0.07);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease;
+    }
+    .offer-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
+    }
+    .offer-section h2,
+    .fees-section h2 {
+      color: #3a86ff;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    .offer-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 1.1rem;
+      color: #334e68;
+    }
+    .offer-section ul li {
+      margin-bottom: 10px;
+    }
+    .fees-section {
+      background: #e0e7ff;
+    }
+    .fees-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .fees-table th, .fees-table td {
+      padding: 12px 15px;
+      border: 1px solid #b0b7ff;
+      text-align: left;
+      font-size: 1.05rem;
+      color: #243665;
+    }
+    .fees-table th {
+      background-color: #acb8ff;
+      color: #102a43;
+    }
+    .fees-note {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #374785;
+      font-style: italic;
+      text-align: center;
+    }
+    .cta {
+      text-align: center;
+      margin: 60px 0 40px 0;
+    }
+    .cta button {
+      background: #8338ec;
+      color: white;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px rgb(131 56 236 / 0.4);
+    }
+    .cta button:hover {
+      background: #3a86ff;
+      box-shadow: 0 6px 18px rgb(58 134 255 / 0.7);
+    }
+    footer {
+      background: #1b262c;
+      color: #bbe1fa;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #bbe1fa;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .offer-section h2,
+      .fees-section h2 {
+        font-size: 1.5rem;
+      }
+      .cta button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 14px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Master.png" alt="Sadguru Coaching Classes Logo" />
+    <h1>Sadguru Coaching Classes</h1>
+    <p>Your Pathway to Academic Excellence</p>
+  </header>
+  <main>
+    <section class="offer-section">
+      <h2>11th & 12th Science</h2>
+      <ul>
+        <li>PCMB - Physics, Chemistry, Mathematics, Biology</li>
+        <li>JEE / NEET Foundation & Preparation</li>
+        <li>MHT-CET Coaching for State Level Exams</li>
+      </ul>
+    </section>
+    <section class="offer-section">
+      <h2>3rd to 10th Standard</h2>
+      <ul>
+        <li>Strong Foundation Courses for Core Subjects</li>
+        <li>Interactive and Engaging Classes</li>
+        <li>Personalized Attention to Students</li>
+      </ul>
+    </section>
+    <section class="offer-section">
+      <h2>SSC & CBSE Board</h2>
+      <ul>
+        <li>All Subjects Covered for Both Boards</li>
+        <li>Comprehensive Syllabus Coverage</li>
+        <li>Preparation for Board Exams With Practice Tests</li>
+      </ul>
+    </section>
+    <section class="fees-section">
+      <h2>Fee Structure (Yearly Fees)</h2>
+      <table class="fees-table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Board</th>
+            <th>Yearly Fees (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3 to 5</td><td>CBSE / SSC</td><td>4,999</td></tr>
+          <tr><td>6</td><td>CBSE / SSC</td><td>7,999</td></tr>
+          <tr><td>7</td><td>State / CBSE</td><td>11,999</td></tr>
+          <tr><td>8</td><td>State / CBSE</td><td>15,999</td></tr>
+          <tr><td>9</td><td>CBSE</td><td>17,999</td></tr>
+          <tr><td>9</td><td>State</td><td>16,999</td></tr>
+          <tr><td>10</td><td>CBSE</td><td>19,999</td></tr>
+          <tr><td>10</td><td>State</td><td>17,999</td></tr>
+          <tr><td>11</td><td>Science</td><td>30,000</td></tr>
+          <tr><td>12</td><td>Science</td><td>40,000</td></tr>
+        </tbody>
+      </table>
+      <p class="fees-note">* These are yearly fees. Fees may vary for monthly and quarterly installments.</p>
+    </section>
+    
+    <div class="cta">
+      <a href="tel:9890787526">
+        <button>
+          Call Now
+        </button>
+      </a>
+    </div>
+
+    <section id="contact-section">
+      <h2 style="text-align:center; color:#8338ec;">Contact & Enrollment</h2>
+      <p style="text-align:center; font-size:1.1rem;">
+        For admissions and inquiries, call us at <strong>+91 98907 87526</strong> or <strong>+91 98811 57526</strong><br />
+        Email: <a href="mailto:info@sadgurucoaching.com" style="color:#3a86ff;">info@sadgurucoaching.com</a>
+      </p>
+    </section>
+
+    <div style="text-align:center; margin-top: 40px;">
+      <h3 style="color:#3a86ff;">Our Parents Testonomials</h3>
+
+      <!-- YouTube Embed -->
+      <div style="margin-bottom: 30px;">
+        <iframe width="320" height="180"
+          src="https://www.youtube.com/embed/GT5YU0jNK4k?si=XRK90lii48OMIjQe"
+          title="Sadguru Coaching Classes"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        Or visit us on 
+        <a href="https://www.instagram.com/sadgurucoachingclass/" target="_blank" style="color:#8338ec;">Instagram</a> and 
+        <a href="https://www.youtube.com/@sadgurucoachingclass" target="_blank" style="color:#3a86ff;">YouTube</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy;Sadguru Coaching Classes. All rights reserved.
+  </footer>
+</body>
+</html>
