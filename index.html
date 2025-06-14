@@ -629,27 +629,45 @@ Sadguru Coaching Classes तर्फे एक महत्त्वाची �
       <a href="https://www.youtube.com/@sadgurucoachingclass" target="_blank" rel="noopener noreferrer">Subscribe Now</a>
     </p>
   </section>
-
-    <section id="admission-form-section" aria-labelledby="admission-form-title" style="background: #f9fafb; padding: 40px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 40px auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+<!-- Admission Form Section -->
+<section id="admission-form-section" aria-labelledby="admission-form-title" style="background: #f9fafb; padding: 40px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 40px auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <h2 id="admission-form-title" style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px;">🎓 Admission Form</h2>
   <p style="text-align: center; font-size: 1.1rem; color: #34495e; max-width: 650px; margin: 0 auto 30px;">
-    Please fill in the form below to register for admissions. Our team will contact you soon.
-    (कृपया खालील फॉर्म मध्ये आपली माहिती नोंदवा. आमचा टीम लवकरच आपल्याशी संपर्क साधेल.)
+    Please fill in the form below to register for admissions. Our team will contact you soon. <br>
+    <span lang="mr">(कृपया खालील फॉर्म मध्ये आपली माहिती नोंदवा. आमचा टीम लवकरच आपल्याशी संपर्क साधेल.)</span>
   </p>
+  <div style="text-align: center;">
+    <button onclick="openFormModal()" style="background-color: #2c3e50; color: #fff; padding: 12px 24px; font-size: 1rem; border: none; border-radius: 6px; cursor: pointer; transition: background 0.3s ease;">
+      📝 Apply Now
+    </button>
+  </div>
+</section>
 
-  <div style="position: relative; padding-bottom: 160%; height: 0; overflow: hidden; max-width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<!-- Modal Overlay -->
+<div id="formModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center;">
+  <div style="background: #fff; width: 95%; max-width: 800px; height: 90vh; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+    <button onclick="closeFormModal()" style="position: absolute; top: 10px; right: 10px; background: #e74c3c; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">
+      ✖ Close
+    </button>
     <iframe 
       src="https://docs.google.com/forms/d/e/1FAIpQLScZ5hxPJTr46nkrpETdisdMyTeunxd_F-vJ_BIBfttrVdrEOA/viewform?embedded=true" 
+      title="Sadguru Coaching Classes Admission Form"
       frameborder="0" 
-      marginheight="0" 
-      marginwidth="0" 
-      style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border-radius: 10px;"
-      aria-label="Sadguru Coaching Classes Admission Form"
-      >
+      style="width: 100%; height: 100%; border: none;">
       Loading…
     </iframe>
   </div>
-</section>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+  function openFormModal() {
+    document.getElementById('formModal').style.display = 'flex';
+  }
+  function closeFormModal() {
+    document.getElementById('formModal').style.display = 'none';
+  }
+</script>
 
 
   <footer>
